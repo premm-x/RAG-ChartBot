@@ -6,3 +6,18 @@ Web pages → WebBaseLoader
 Databases → SQLDatabaseLoader
 Notion / Confluence / Google Drive → community loaders
 APIs / JSON → you can write custom loaders
+
+#-----------------sample function-----------------------
+def load_file(file_path):
+    if file_path.endswith(".pdf"):
+        loader = PyPDFLoader(file_path)
+    elif file_path.endswith(".txt"):
+        loader = TextLoader(file_path, encoding="utf-8")
+    elif file_path.endswith(".csv"):
+        loader = CSVLoader(file_path)
+    elif file_path.endswith(".docx"):
+        loader = Docx2txtLoader(file_path)
+    else:
+        raise ValueError("❌ Unsupported file type. Use PDF, TXT, CSV, or DOCX.")
+    return loader.load()
+#-------------------------------------------------------
