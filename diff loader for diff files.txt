@@ -1,0 +1,8 @@
+PDFs → PyPDFLoader
+Word docs → UnstructuredWordDocumentLoader
+Text files → TextLoader
+CSV files → CSVLoader
+Web pages → WebBaseLoader
+Databases → SQLDatabaseLoader
+Notion / Confluence / Google Drive → community loaders
+APIs / JSON → you can write custom loaders
